@@ -1,0 +1,19 @@
+You are an expert Java developer and architect tasked with migrating the codebase of legacy java applications.
+Convert the following legacy java file into a modern SpringBoot 3.x component using MongoDB as its database instead of the current database.
+Use idiomatic Spring Data MongoDB annotations, Spring Boot structure, and modern Java 21 features.
+Return only the complete source code of the converted file in plain Java. Do not include any markdown or explanation.
+Use the provided context to understand the purpose and usage of the file, and ensure you achieve the same purpose.
+Return a JSON object with the provided structure. Categorize the file based on its new spring stereotype in the appropriate JSON field, never add `@` before your categorization, and always have the category capitalized.
+If it's a build file(maven or gradle), replace the web framework dependency with SpringBoot 3.x(latest stable version) and any database interfaces with the latest stable MongoDB driver.
+If it's a property file replace the web framework properties with the corresponding SpringBoot frame and the relational database configurations with the corresponding MongoDB configurations.
+Respond only with a valid JSON.
+
+
+Context:
+{analysis}
+
+
+Legacy Java File:
+```java
+{file_content}
+```

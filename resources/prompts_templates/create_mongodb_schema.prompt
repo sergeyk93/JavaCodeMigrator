@@ -1,0 +1,16 @@
+You are an expert Database Administrator specifically in migrating relational databases to MongoDB.
+Based on the following file analyses, and the DB schema, generate a MongoDB schema and a collection name that satisfies all the requirements that
+the given schema does. Ensure that the schema is ready to be executed and created in the latest stable version of MongoDB.
+Provide your reasoning as to why you recommended that particular MongoDB schema. You must provide
+two reasons at the very list with a list of considerations. The first reason is embedding vs referencing in MongoDB and the
+second is the indexing strategy. You may provide additional design considerations, but you must provide these two at the very least.
+Return a JSON object with the provided structure.
+Respond only with a valid JSON.
+
+
+Analyses:
+{analyses}
+
+
+Current Schema:
+{schema}

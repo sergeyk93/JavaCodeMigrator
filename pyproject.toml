@@ -1,0 +1,58 @@
+[project]
+name = "JavaCodeMigrator"
+version = "0.1.0"
+description = """
+A tool that creates a migration plan in markdown for migrating a legacy java applications that use relational databases
+to Java 21 SpringBoot applications that use MongoDB.
+"""
+authors = [
+    { name = "Sergey Kalashian", email = "sergeyk93@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "langchain[openai] == 0.3.*",
+    "langchain-community == 0.3.*",
+    "jinja2 == 3.1.*",
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "~8.3"
+pytest-asyncio = "~0.26"
+pytest-cov = "~6.1"
+ruff = "~0.11"
+mypy = "~1.15"
+pre-commit = "~4.2"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+  "tests/*"
+]
+
+[tool.ruff]
+line-length = 120  # Match PyCharm
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "src"
+follow_imports = "silent"
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "openai.*",
+]

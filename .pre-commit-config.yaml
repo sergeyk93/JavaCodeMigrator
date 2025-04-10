@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.4
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0
+    hooks:
+      - id: mypy
+  - repo: local
+    hooks:
+        - id: pytest
+          name: Run unit tests with coverage
+          entry: poetry
+          language: system
+          types: [ python ]
+          pass_filenames: false
+          args:
+            - run
+            - pytest
+            # Add a coverage report in the project's root directory
+            - --cov=.
+            - --cov-report=html

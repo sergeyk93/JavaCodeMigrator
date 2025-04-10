@@ -1,0 +1,6 @@
+.venv
+.idea
+cache/*
+output/llm_responses/**
+*.log
+.coverage

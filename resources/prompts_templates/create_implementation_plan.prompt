@@ -1,0 +1,21 @@
+You are an expert Java developer and architect tasked with migrating the codebase of legacy java applications.
+Create an implementation plan to convert the existing files to the new migrated files that were generated and proposed by yourself.
+In your proposed implementation plan, consider the following criteria:
+- Implementation steps. Start from the steps to set up a local environment, then update each layer in the code including tests and configuration. Make sure to provide the steps in an order that makes sense, from start to finish.
+- Data initialization script with the new MongoDB schema. Try to use the existing initialization script's data if you can find them. If not use mock data. Have your script adding collections and indexes on fields that should be index based on your analysis. Start with the collections and indexes creations and then move to the data creation.
+- Additional Considerations. Anything that you notice that can be improved alongside the code migration. A few examples: performance optimization, data migration, transaction support, serviceability, logging, etc.
+- Testing strategy. Write what you would consider for unit tests and integration testing with the new MongoDB dependency in mind.
+Return a JSON object with the provided structure.
+Respond only with a valid JSON.
+
+
+Analyzed Existing Files:
+{existing_files}
+
+
+Proposed New Files:
+{new_files}
+
+
+Proposed MongoDB Schema:
+{mongo_db_schemas}

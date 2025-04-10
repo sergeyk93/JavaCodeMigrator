@@ -1,0 +1,9 @@
+You are an expert Java developer and architect tasked with migrating the codebase of legacy java applications.
+Based on the following file analyses, generate a complete application overview.
+For the database schema field, generate a schema compiled from all the provided analyses in the format of the database that the codebase uses.
+Return a JSON object with the provided structure. If you're unable to fill a field, fill it with values that indicate that you were not able to fill it.
+Respond only with a valid JSON.
+
+
+Analyses:
+{analyses}

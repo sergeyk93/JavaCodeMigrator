@@ -1,0 +1,14 @@
+You are an expert Java developer and architect tasked with migrating the codebase of legacy java applications.
+Analyze the following file and summarize:
+- A summary of the purpose of the file.
+- Database entities and schema.
+- Database config references.
+- API endpoints and their path as well as a summarized purpose of each endpoint.
+- Any concerns migrating the file to Java 21 using the SpringBoot 3.x framework.
+- If it's a repository class, any concerns migrating it to a MongoDB repository.
+- If it's a build config file(maven or gradle), summarize all the dependencies and versions used.
+- If it's a readme file(usually in a markdown or asciidoc format), summarize it with the focus on the technological stack, and primarily the database technologies used.
+
+
+File content:
+{file_content}

@@ -1,0 +1,130 @@
+# {{ application_name }} MongoDB Migration Plan
+
+## 1. Current Application Overview
+
+{{ application_summary }}
+
+### 1.1 Key components of the current architecture:
+{% if db_entities %}
+- **Entity Model**:
+{% for entity in db_entities %}
+  - `{{ entity.entity_name }}`: {{ entity.summary }}
+
+{% endfor %}
+{% endif %}
+
+{% if repositories %}
+- **Repositories**
+{% for repo in repositories %}
+  - {{ repo }}
+
+{% endfor %}
+{% endif %}
+
+{% if database_configurations %}
+- **Database Configuration**
+{% for config in database_configurations %}
+  - {{ config }}
+
+{% endfor %}
+{% endif %}
+
+{% if api_definitions %}
+### 1.2 API Definitions:
+{% for api in api_definitions %}
+#### {{ api.api_name }}
+- **Path:** `{{ api.api_path }}`
+- **Summary:** {{ api.api_summary }}
+
+{% endfor %}
+{% endif %}
+
+{% if database_tables %}
+### 1.3 Database Schemas
+{% for table in database_tables %}
+#### {{ table.name }}
+`{{ table.db_schema }}`
+
+{% endfor %}
+{% endif %}
+
+## 2. MongoDB Migration Strategy
+
+### 2.1 Schema Design
+When migrating from a relational database to MongoDB, we need to rethink our data model. MongoDB's document model allows for embedded documents and references between documents.
+
+{% if mongo_db_schemas %}
+#### Proposed MongoDB Schemas:
+{% for mongo_db_schema in mongo_db_schemas %}
+**Collection Name: `{{ mongo_db_schema.collection_name }}`**
+```
+{{ mongo_db_schema.mongo_db_schema }}
+```
+
+**Design Decisions:**
+
+{% for decision in mongo_db_schema.schema_decisions %}
+{{ loop.index }}. **{{ decision.name }}**
+{% for consideration in decision.considerations %}
+    - {{ consideration }}
+
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endif %}
+
+### 2.2 Files to Change
+{% for category, files in migrated_files.items() %}
+#### {{ category }}
+
+{% for file in files %}
+File: `{{ file.relative_path }}`
+```java
+{{ file.new_file }}
+```
+
+{% endfor %}
+{% endfor %}
+
+### 2.3  Create MongoDB initialization
+```
+{{ data_initialization_script }}
+```
+
+## 3. Implementation Steps
+
+{% for implementation_step in implementation_steps %}
+{{ loop.index }}. **{{ implementation_step.name }}**
+{% for sub_task in implementation_step.sub_tasks %}
+  - {{ sub_task }}
+
+{% endfor %}
+{% endfor %}
+
+## 4. Additional Considerations
+{% for additional_consideration in additional_considerations %}
+### 4.{{ loop.index }} {{ additional_consideration.consideration_name }}
+
+{% for consideration_point in additional_consideration.consideration_points %}
+  - {{ consideration_point }}
+
+{% endfor %}
+{% endfor %}
+
+## 5. Testing Strategy
+1. **Unit Tests:**
+{% for unit_test_consideration in testing_strategy.unit_test_considerations %}
+  - {{ unit_test_consideration }}
+
+{% endfor %}
+
+2. **Integration Tests:**
+{% for integration_test_consideration in testing_strategy.integration_test_considerations %}
+  - {{ integration_test_consideration }}
+
+{% endfor %}
+
+**Test Class Template:**
+```
+{{ testing_strategy.test_class_template  }}
+```
